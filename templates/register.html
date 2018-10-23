@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="{% url 'registerin' %}" method="post">
+    {% csrf_token %}
+        <p>
+            用户名
+            <input type="text" name="username" id="username">
+        </p>
+        <p>
+            用户密码
+            <input type="password" name="pwd" id="pwd">
+        </p>
+        <p>
+            密码确认
+            <input type="password" name="cpwd" id="cpwd">
+        </p>
+        <p>
+            Email
+            <input type="email" name="uemail" id="uemail">
+        </p>
+        <p>
+            手机号
+            <input type="text" name="uphone" id="uphone">
+        </p>
+        <p>
+            <input type="submit" value="提交">
+        </p>
+        {{ msg }}
+    </form>
+</body>
+</html>
